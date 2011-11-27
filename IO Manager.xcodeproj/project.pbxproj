@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		600071FA1481981700454EF3 /* Output.m in Sources */ = {isa = PBXBuildFile; fileRef = 600071F91481981700454EF3 /* Output.m */; };
+		600071FD1481981800454EF3 /* PatchPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 600071FC1481981800454EF3 /* PatchPoint.m */; };
+		600072001481981900454EF3 /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 600071FF1481981900454EF3 /* Show.m */; };
+		600072031481981900454EF3 /* Input.m in Sources */ = {isa = PBXBuildFile; fileRef = 600072021481981900454EF3 /* Input.m */; };
+		600072061481981900454EF3 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 600072051481981900454EF3 /* Connection.m */; };
+		601FAC871481C2480034F7AB /* loadShowPO.m in Sources */ = {isa = PBXBuildFile; fileRef = 601FAC851481C2480034F7AB /* loadShowPO.m */; };
+		601FAC881481C2480034F7AB /* loadShowPO.xib in Resources */ = {isa = PBXBuildFile; fileRef = 601FAC861481C2480034F7AB /* loadShowPO.xib */; };
+		601FAC8E1481CC8C0034F7AB /* showInputTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 601FAC8D1481CC8C0034F7AB /* showInputTVC.m */; };
 		6073F5491466F6CC00AADA05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6073F5481466F6CC00AADA05 /* UIKit.framework */; };
 		6073F54B1466F6CC00AADA05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6073F54A1466F6CC00AADA05 /* Foundation.framework */; };
 		6073F54D1466F6CC00AADA05 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6073F54C1466F6CC00AADA05 /* CoreGraphics.framework */; };
@@ -15,21 +23,58 @@
 		6073F5571466F6CD00AADA05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6073F5561466F6CD00AADA05 /* main.m */; };
 		6073F55B1466F6CD00AADA05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6073F55A1466F6CD00AADA05 /* AppDelegate.m */; };
 		6073F55E1466F6CD00AADA05 /* IO_Manager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6073F55C1466F6CD00AADA05 /* IO_Manager.xcdatamodeld */; };
+		6073F5651466F70E00AADA05 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6073F5641466F70E00AADA05 /* Storyboard.storyboard */; };
+		60F5F0FE147AE61400E93F6F /* showMDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F5F0FC147AE61400E93F6F /* showMDVC.m */; };
+		60F5F0FF147AE61400E93F6F /* showMDVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F5F0FD147AE61400E93F6F /* showMDVC.xib */; };
+		60F5F103147AE9EE00E93F6F /* showMasterVC.h in Sources */ = {isa = PBXBuildFile; fileRef = 60F5F101147AE9EE00E93F6F /* showMasterVC.h */; };
+		60F5F104147AE9EE00E93F6F /* showMasterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F5F102147AE9EE00E93F6F /* showMasterVC.xib */; };
+		60F5F10D147AFC7B00E93F6F /* blankDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F5F10B147AFC7B00E93F6F /* blankDetailVC.m */; };
+		60F5F10E147AFC7B00E93F6F /* blankDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F5F10C147AFC7B00E93F6F /* blankDetailVC.xib */; };
+		60F5F113147B096E00E93F6F /* showInputTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F5F111147B096E00E93F6F /* showInputTVC.xib */; };
+		60F5F116147B0CF300E93F6F /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F5F115147B0CF300E93F6F /* DataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		600071F81481981700454EF3 /* Output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Output.h; path = "Data Classes/Output.h"; sourceTree = "<group>"; };
+		600071F91481981700454EF3 /* Output.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Output.m; path = "Data Classes/Output.m"; sourceTree = "<group>"; };
+		600071FB1481981800454EF3 /* PatchPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PatchPoint.h; path = "Data Classes/PatchPoint.h"; sourceTree = "<group>"; };
+		600071FC1481981800454EF3 /* PatchPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PatchPoint.m; path = "Data Classes/PatchPoint.m"; sourceTree = "<group>"; };
+		600071FE1481981800454EF3 /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Show.h; path = "Data Classes/Show.h"; sourceTree = "<group>"; };
+		600071FF1481981900454EF3 /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Show.m; path = "Data Classes/Show.m"; sourceTree = "<group>"; };
+		600072011481981900454EF3 /* Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Input.h; path = "Data Classes/Input.h"; sourceTree = "<group>"; };
+		600072021481981900454EF3 /* Input.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Input.m; path = "Data Classes/Input.m"; sourceTree = "<group>"; };
+		600072041481981900454EF3 /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Connection.h; path = "Data Classes/Connection.h"; sourceTree = "<group>"; };
+		600072051481981900454EF3 /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Connection.m; path = "Data Classes/Connection.m"; sourceTree = "<group>"; };
+		601FAC841481C2480034F7AB /* loadShowPO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loadShowPO.h; sourceTree = "<group>"; };
+		601FAC851481C2480034F7AB /* loadShowPO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loadShowPO.m; sourceTree = "<group>"; };
+		601FAC861481C2480034F7AB /* loadShowPO.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = loadShowPO.xib; sourceTree = "<group>"; };
+		601FAC8D1481CC8C0034F7AB /* showInputTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = showInputTVC.m; sourceTree = "<group>"; };
 		6073F5441466F6CC00AADA05 /* IO Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IO Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6073F5481466F6CC00AADA05 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6073F54A1466F6CC00AADA05 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6073F54C1466F6CC00AADA05 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6073F54E1466F6CC00AADA05 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		6073F5521466F6CC00AADA05 /* IO Manager-Info.plist */ = {isa = PBXFileReference; path = "IO Manager-Info.plist"; sourceTree = "<group>"; };
+		6073F5521466F6CC00AADA05 /* IO Manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IO Manager-Info.plist"; sourceTree = "<group>"; };
 		6073F5541466F6CD00AADA05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6073F5561466F6CD00AADA05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6073F5581466F6CD00AADA05 /* IO Manager-Prefix.pch */ = {isa = PBXFileReference; path = "IO Manager-Prefix.pch"; sourceTree = "<group>"; };
-		6073F5591466F6CD00AADA05 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		6073F5581466F6CD00AADA05 /* IO Manager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IO Manager-Prefix.pch"; sourceTree = "<group>"; };
+		6073F5591466F6CD00AADA05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6073F55A1466F6CD00AADA05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6073F55D1466F6CD00AADA05 /* IO_Manager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IO_Manager.xcdatamodel; sourceTree = "<group>"; };
+		6073F5641466F70E00AADA05 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		60F5F0FB147AE61400E93F6F /* showMDVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = showMDVC.h; sourceTree = "<group>"; };
+		60F5F0FC147AE61400E93F6F /* showMDVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = showMDVC.m; sourceTree = "<group>"; };
+		60F5F0FD147AE61400E93F6F /* showMDVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = showMDVC.xib; sourceTree = "<group>"; };
+		60F5F100147AE9EE00E93F6F /* showMasterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = showMasterVC.m; sourceTree = "<group>"; };
+		60F5F101147AE9EE00E93F6F /* showMasterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = showMasterVC.h; sourceTree = "<group>"; };
+		60F5F102147AE9EE00E93F6F /* showMasterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = showMasterVC.xib; sourceTree = "<group>"; };
+		60F5F10A147AFC7A00E93F6F /* blankDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blankDetailVC.h; sourceTree = "<group>"; };
+		60F5F10B147AFC7B00E93F6F /* blankDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = blankDetailVC.m; sourceTree = "<group>"; };
+		60F5F10C147AFC7B00E93F6F /* blankDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = blankDetailVC.xib; sourceTree = "<group>"; };
+		60F5F10F147B096E00E93F6F /* showInputTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = showInputTVC.h; sourceTree = "<group>"; };
+		60F5F111147B096E00E93F6F /* showInputTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = showInputTVC.xib; sourceTree = "<group>"; };
+		60F5F114147B0CF300E93F6F /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = Classes/DataManager.h; sourceTree = "<group>"; };
+		60F5F115147B0CF300E93F6F /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = Classes/DataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +92,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		600071F41481974100454EF3 /* Data Manager Classes */ = {
+			isa = PBXGroup;
+			children = (
+				600072041481981900454EF3 /* Connection.h */,
+				600072051481981900454EF3 /* Connection.m */,
+				600072011481981900454EF3 /* Input.h */,
+				600072021481981900454EF3 /* Input.m */,
+				600071FE1481981800454EF3 /* Show.h */,
+				600071FF1481981900454EF3 /* Show.m */,
+				600071FB1481981800454EF3 /* PatchPoint.h */,
+				600071FC1481981800454EF3 /* PatchPoint.m */,
+				600071F81481981700454EF3 /* Output.h */,
+				600071F91481981700454EF3 /* Output.m */,
+			);
+			name = "Data Manager Classes";
+			sourceTree = "<group>";
+		};
 		6073F5391466F6CB00AADA05 = {
 			isa = PBXGroup;
 			children = (
@@ -78,9 +140,13 @@
 		6073F5501466F6CC00AADA05 /* IO Manager */ = {
 			isa = PBXGroup;
 			children = (
+				608DC27E147DA33100A40A21 /* Popover Views */,
+				60F5F0F9147AE43D00E93F6F /* Show Views */,
+				60F5F0F7147AE42800E93F6F /* Classes */,
 				6073F5591466F6CD00AADA05 /* AppDelegate.h */,
 				6073F55A1466F6CD00AADA05 /* AppDelegate.m */,
 				6073F55C1466F6CD00AADA05 /* IO_Manager.xcdatamodeld */,
+				600071F41481974100454EF3 /* Data Manager Classes */,
 				6073F5511466F6CC00AADA05 /* Supporting Files */,
 			);
 			path = "IO Manager";
@@ -92,9 +158,56 @@
 				6073F5521466F6CC00AADA05 /* IO Manager-Info.plist */,
 				6073F5531466F6CD00AADA05 /* InfoPlist.strings */,
 				6073F5561466F6CD00AADA05 /* main.m */,
+				6073F5641466F70E00AADA05 /* Storyboard.storyboard */,
 				6073F5581466F6CD00AADA05 /* IO Manager-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		608DC27E147DA33100A40A21 /* Popover Views */ = {
+			isa = PBXGroup;
+			children = (
+				601FAC841481C2480034F7AB /* loadShowPO.h */,
+				601FAC851481C2480034F7AB /* loadShowPO.m */,
+				601FAC861481C2480034F7AB /* loadShowPO.xib */,
+			);
+			name = "Popover Views";
+			sourceTree = "<group>";
+		};
+		60F5F0F7147AE42800E93F6F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				60F5F114147B0CF300E93F6F /* DataManager.h */,
+				60F5F115147B0CF300E93F6F /* DataManager.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		60F5F0F9147AE43D00E93F6F /* Show Views */ = {
+			isa = PBXGroup;
+			children = (
+				60F5F0FA147AE44E00E93F6F /* xibs */,
+				60F5F0FB147AE61400E93F6F /* showMDVC.h */,
+				60F5F0FC147AE61400E93F6F /* showMDVC.m */,
+				60F5F101147AE9EE00E93F6F /* showMasterVC.h */,
+				60F5F100147AE9EE00E93F6F /* showMasterVC.m */,
+				60F5F10A147AFC7A00E93F6F /* blankDetailVC.h */,
+				60F5F10B147AFC7B00E93F6F /* blankDetailVC.m */,
+				60F5F10F147B096E00E93F6F /* showInputTVC.h */,
+				601FAC8D1481CC8C0034F7AB /* showInputTVC.m */,
+			);
+			name = "Show Views";
+			sourceTree = "<group>";
+		};
+		60F5F0FA147AE44E00E93F6F /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				60F5F102147AE9EE00E93F6F /* showMasterVC.xib */,
+				60F5F111147B096E00E93F6F /* showInputTVC.xib */,
+				60F5F10C147AFC7B00E93F6F /* blankDetailVC.xib */,
+				60F5F0FD147AE61400E93F6F /* showMDVC.xib */,
+			);
+			name = xibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +262,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6073F5551466F6CD00AADA05 /* InfoPlist.strings in Resources */,
+				6073F5651466F70E00AADA05 /* Storyboard.storyboard in Resources */,
+				60F5F0FF147AE61400E93F6F /* showMDVC.xib in Resources */,
+				60F5F104147AE9EE00E93F6F /* showMasterVC.xib in Resources */,
+				60F5F10E147AFC7B00E93F6F /* blankDetailVC.xib in Resources */,
+				60F5F113147B096E00E93F6F /* showInputTVC.xib in Resources */,
+				601FAC881481C2480034F7AB /* loadShowPO.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +281,17 @@
 				6073F5571466F6CD00AADA05 /* main.m in Sources */,
 				6073F55B1466F6CD00AADA05 /* AppDelegate.m in Sources */,
 				6073F55E1466F6CD00AADA05 /* IO_Manager.xcdatamodeld in Sources */,
+				60F5F0FE147AE61400E93F6F /* showMDVC.m in Sources */,
+				60F5F103147AE9EE00E93F6F /* showMasterVC.h in Sources */,
+				60F5F10D147AFC7B00E93F6F /* blankDetailVC.m in Sources */,
+				60F5F116147B0CF300E93F6F /* DataManager.m in Sources */,
+				600071FA1481981700454EF3 /* Output.m in Sources */,
+				600071FD1481981800454EF3 /* PatchPoint.m in Sources */,
+				600072001481981900454EF3 /* Show.m in Sources */,
+				600072031481981900454EF3 /* Input.m in Sources */,
+				600072061481981900454EF3 /* Connection.m in Sources */,
+				601FAC871481C2480034F7AB /* loadShowPO.m in Sources */,
+				601FAC8E1481CC8C0034F7AB /* showInputTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +397,7 @@
 				6073F5631466F6CD00AADA05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
