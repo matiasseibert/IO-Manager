@@ -7,7 +7,6 @@
 //
 
 #import "showMasterVC.h"
-#import "showInputTVC.h"
 
 @interface showMasterVC()
 
@@ -32,15 +31,15 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        NSArray *connectionsArray = [NSArray arrayWithObjects:@"Inputs", @"Outputs", @"Patches", nil];
+        NSArray *connectionsArray = [NSArray arrayWithObjects:@"Inputs", @"Patches", @"Console", nil];
         NSArray *infoArray = [NSArray arrayWithObjects:@"Equipment List", @"System Diagram", @"Notes", nil];
         NSArray *designArray = [NSArray arrayWithObjects:@"Scenes", @"Cues", nil];
         
         NSDictionary *connectionsDict = [NSDictionary dictionaryWithObjectsAndKeys:@"Connections", @"name", connectionsArray, @"rows", nil];
-        NSDictionary *infoDict = [NSDictionary dictionaryWithObjectsAndKeys:@"Info", @"name", infoArray, @"rows", nil];
-        NSDictionary *designDict = [NSDictionary dictionaryWithObjectsAndKeys:@"Design", @"name", designArray, @"rows", nil];
+        //NSDictionary *infoDict = [NSDictionary dictionaryWithObjectsAndKeys:@"Info", @"name", infoArray, @"rows", nil];
+        //NSDictionary *designDict = [NSDictionary dictionaryWithObjectsAndKeys:@"Design", @"name", designArray, @"rows", nil];
         
-        categories = [NSArray arrayWithObjects:connectionsDict, infoDict, designDict, nil];
+        categories = [NSArray arrayWithObjects:connectionsDict, nil];
         
     }
     return self;
@@ -59,15 +58,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    UIBarButtonItem *loadShowButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(loadShow)];
-    self.navigationItem.rightBarButtonItem = loadShowButton;
+//    UIBarButtonItem *loadShowButton = [[UIBarButtonItem alloc] initWithTitle:@"Load Show" style:UIBarButtonItemStylePlain target:self action:@selector(loadShow:)];
+//    self.navigationItem.rightBarButtonItem = loadShowButton;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.title = [delegate getShowName];
+    [delegate showDetailForShowWithDelegate:self];
+
 }
 
 - (void)viewDidUnload
@@ -103,12 +105,6 @@
 	return YES;
 }
 
-#pragma mark - Button Methods
-
-- (void)loadShow:(id)sender {
-    // pop up a modal view to create an input. 
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -134,7 +130,10 @@
     
     // Configure the cell...
     cell.textLabel.text = [[[categories objectAtIndex:[indexPath section]] objectForKey:@"rows"] objectAtIndex:[indexPath row]];
-    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    
+    if ([indexPath section] == 0)
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    
     return cell;
 }
 
@@ -143,56 +142,10 @@
     return [[categories objectAtIndex:section] objectForKey:@"name"];
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
     
     if ([indexPath section] == 0) {
         if ([indexPath row] == 0) {
@@ -201,16 +154,27 @@
             [self.navigationController pushViewController:inputView animated:YES];
         }
         if ([indexPath row] == 1) {
-            // push new showOutputTVC 
+            // push new patchList 
+            patchList *patchesView = [[patchList alloc] initWithShow:[delegate getShowName]];
+            [patchesView setDelegate:delegate];
+            [self.navigationController pushViewController:patchesView animated:YES];
         }
         if ([indexPath row] == 2) {
-            // push new showPatchesTVC
+            [delegate showDetailForConsole];
         }
     }
     else
     {
         // tell the delegate to display a view controller.
     }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - masterControl Delegate
+
+-(void)loadShow:(NSString *)name {
+    [delegate loadShow:name];
+    self.title = name;
 }
 
 @end

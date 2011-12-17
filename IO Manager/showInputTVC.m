@@ -12,19 +12,23 @@
 
 @property (strong, nonatomic) NSArray *inputList;
 @property (strong, nonatomic) NSString *showName;
-
+@property (strong, nonatomic) UIPopoverController *curPopover;
+@property (nonatomic, strong) NSIndexPath *curSelected;
 @end
 
 @implementation showInputTVC
 @synthesize delegate;
 @synthesize inputList, showName;
+@synthesize curPopover;
+@synthesize curSelected;
 
 - (id)initWithShow:(NSString *)name
 {
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
         showName = name;
-        inputList = [[DataManager sharedInstance] getInputsForShow:showName];
+        DataManager *dataManager = [DataManager sharedInstance];
+        inputList = [dataManager getInputsForShow:showName];
     }
     return self;
 }
@@ -45,8 +49,9 @@
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addInput)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addInput:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    self.title = @"Inputs";
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -88,7 +93,15 @@
 #pragma mark - Button Methods
 
 - (void)addInput:(id)sender {
-    // pop up a modal view to create an input. 
+    if (self.curPopover != nil)
+        [self clearPopover];
+    numInputView *numInput = [[numInputView alloc] initWithValue:1];
+    [numInput setDelegate:self];
+    UINavigationController *container = [[UINavigationController alloc] initWithRootViewController:numInput];
+    numInput.title = @"Inputs to Create";
+    self.curPopover = [[UIPopoverController alloc] initWithContentViewController:container];
+    [self.curPopover setPopoverContentSize:CGSizeMake(320, 387)];
+    [self.curPopover presentPopoverFromBarButtonItem:self.navigationItem.rightBarButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 #pragma mark - Table view data source
@@ -111,75 +124,55 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell...
     Input *myInput = [inputList objectAtIndex:[indexPath row]];
     
-    NSString *cellTitle = [NSString stringWithFormat:@"%d. %@", [myInput.number intValue], myInput.name];
-    
-    cell.textLabel.text = cellTitle;
-    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    cell.textLabel.text = [NSString stringWithFormat:@"%d. %@", [myInput.number intValue], myInput.name];
+    cell.detailTextLabel.text = myInput.micName; 
     
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    
     // Use the delegate to do this:
-    [delegate showDetailForInput:[inputList objectAtIndex:[indexPath row]]];
+    self.curSelected = indexPath;
+    [delegate showDetailForInput:[inputList objectAtIndex:[indexPath row]] withDelegate:self];
+    
 }
 
+#pragma mark - overlayControl Delegate 
 
+- (void)clearPopover {
+    [self.curPopover dismissPopoverAnimated:YES];
+    self.curPopover = nil;
+    self.inputList = [[DataManager sharedInstance] getInputsForShow:self.showName];
+    [self.tableView reloadData];
+}
+
+- (void)receiveNum:(NSInteger)num {
+    if (num > 0)
+        [[DataManager sharedInstance] createInputs:num inShow:self.showName];
+}
+
+#pragma mark - inputUpdate Delegate
+
+- (void)updateListing {
+    DataManager *dataManager = [DataManager sharedInstance];
+    self.inputList = [dataManager getInputsForShow:self.showName];
+    [self.tableView reloadData];
+    [self.tableView selectRowAtIndexPath:curSelected animated:NO scrollPosition:UITableViewScrollPositionNone];
+}
+
+#pragma mark - masterControl Delegate
+
+- (NSString *)getShowName {
+    return self.showName;
+}
 
 @end

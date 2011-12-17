@@ -1,0 +1,11 @@
+Notes to Dr. Hannan:
+1) Yes it's a lot of code...sorry about that.
+
+2) Some naming isn't consistent across the entire project. I blame this on the weather/how hungry I was at the time.
+
+3) Most of my code is pretty flexible, in that it won't crash if something goes wrong behind the scenes.
+     Since I didn't feel like writing a debug tool to let me see the contents of CoreData, I'm sure some of these bugs exist. 
+     If you find any of these bugs please let me know because I actually want to release this app someday!
+
+4) While there's backend support for certain input #'s, it'll just draw offscreen. I will put all of the patcherviews in scrollviews, 
+     but I didn't have time for this submission. 

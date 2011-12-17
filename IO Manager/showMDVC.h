@@ -9,9 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "showMasterVC.h"
 #import "showInputTVC.h"
+#import "showListingTVC.h"
+#import "blankDetailVC.h"
+#import "DataManager.h"
+#import "detailInput.h"
+#import "detailPatch.h"
+#import "detailShow.h"
+#import "detailConsole.h"
 
-@interface showMDVC : UISplitViewController <showHelp, inputHelp>
+#import "protocols/masterControl.h"
 
-@property (nonatomic, strong) NSString *showName;
+@interface showMDVC : UISplitViewController <masterControl>
 
 @end

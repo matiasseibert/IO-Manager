@@ -7,6 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "showMDVC.h"
+#import "micMDVC.h"
+
+@interface AppDelegate()
+@property (strong, nonatomic) UITabBarController *tabBarController; 
+@end
 
 @implementation AppDelegate
 
@@ -14,12 +20,20 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+@synthesize tabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    //self.window.backgroundColor = [UIColor whiteColor];
+    tabBarController = [[UITabBarController alloc] init];
+    
+    showMDVC *showVC = [[showMDVC alloc] init];
+    micMDVC *micsVC = [[micMDVC alloc] init];
+    
+    tabBarController.viewControllers = [NSArray arrayWithObjects:showVC, micsVC, nil];
+    [self.window addSubview:tabBarController.view];
     [self.window makeKeyAndVisible];
     return YES;
 }

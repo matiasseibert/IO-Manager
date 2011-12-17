@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>CAD e70</string>
+		<key>image</key>
+		<string>cade70.jpeg</string>
+		<key>type</key>
+		<string>Condensor</string>
+		<key>needsPhantom</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Shure SM57</string>
+		<key>image</key>
+		<string>sm57.jpeg</string>
+		<key>type</key>
+		<string>Dynamic</string>
+		<key>needsPhantom</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Shure SM58</string>
+		<key>image</key>
+		<string>sm58.jpeg</string>
+		<key>type</key>
+		<string>Dynamic</string>
+		<key>needsPhantom</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Sennheiser e945</string>
+		<key>image</key>
+		<string>e945.jpeg</string>
+		<key>type</key>
+		<string>Dynamic</string>
+		<key>needsPhantom</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Sennheiser e845</string>
+		<key>image</key>
+		<string>e845.jpeg</string>
+		<key>type</key>
+		<string>Dynamic</string>
+		<key>needsPhantom</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Audix D6</string>
+		<key>image</key>
+		<string>d6.jpeg</string>
+		<key>type</key>
+		<string>Dynamic</string>
+		<key>needsPhantom</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Radial DI</string>
+		<key>image</key>
+		<string>radialDi.jpeg</string>
+		<key>type</key>
+		<string>Passive DI</string>
+		<key>needsPhantom</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Audix i5</string>
+		<key>image</key>
+		<string>audixi5.jpeg</string>
+		<key>type</key>
+		<string>Dynamic</string>
+		<key>needsPhantom</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Radial JDI</string>
+		<key>image</key>
+		<string>radialJDI.jpeg</string>
+		<key>type</key>
+		<string>Dynamic</string>
+		<key>needsPhantom</key>
+		<false/>
+	</dict>
+</array>
+</plist>

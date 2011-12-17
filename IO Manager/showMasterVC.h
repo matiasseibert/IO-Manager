@@ -7,15 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "showInputTVC.h"
+#import "patchList.h"
+#import "masterControl.h"
 
-@protocol showHelp <NSObject>
-
-- (void)setDetailForIndexPath:(NSIndexPath *)indexPath;
-- (NSString *)getShowName;
-
-@end
-
-@interface showMasterVC : UITableViewController
+@interface showMasterVC : UITableViewController <masterControl>
 
 @property (strong, nonatomic) id delegate;
 

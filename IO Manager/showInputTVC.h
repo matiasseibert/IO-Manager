@@ -9,14 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "DataManager.h"
 #import "Input.h"
+#import "overlayControl.h"
+#import "inputUpdate.h"
+#import "masterControl.h"
+#import "numInputView.h"
 
-@protocol inputHelp <NSObject>
-
-- (void)showDetailForInput:(Input *)input;
-
-@end
-
-@interface showInputTVC : UITableViewController
+@interface showInputTVC : UITableViewController <UIPopoverControllerDelegate, overlayControl, inputUpdate, masterControl>
 
 @property (strong, nonatomic) id delegate;
 
